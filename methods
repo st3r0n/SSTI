@@ -21,3 +21,15 @@ use decision tree to find out
 
 
 EXPLOITATION
+1.once SSTI is deected and template is identified we can read codumataionor hacktrickz to find code to inject to get RCE
+
+2. in code context try  any-useful data such as user.name}}{{7*7}}   ----> such that is execute code
+
+3.look at security section of documetation as it can give idea how we can exploit SSTI
+
+4. look for known exploits
+
+5.try to explore the template wither by using environment varibale using getenv or printenv
+
+developer supplied objects--->   sometimes developer objects can give us sensitive info  ----> they can be accessed using debug features or troubleshoot features in an application
+so we can look for it
