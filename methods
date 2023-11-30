@@ -1,1 +1,23 @@
-methods
+an attacker is able to use native template syntax to inject a malicious payload into a template, which is then executed server-side. 
+example of vulnerable code that can cause ssti ---> $output = $twig->render("Dear " . $_GET['name']);    here name parameter is passed directly
+
+
+exploitation in SSTI includes
+detect ------> identify -------> exploit
+
+DETECT
+${{<%[%'"}}%\   ----> easiest way of detection    -----> see if any exception is raised
+
+context detection
+i. palintext
+sometimes you may think it is XSS but using mathematical function such as {{7*7}} which evaluates to 49 can give idea if it is XSS or SSTI
+ii. code context
+greeting = getQueryParameter('greeting')
+engine.render("Hello {{"+greeting+"}}", data)------> here we have to get out of {{}} then we can use data.username}}<tag> ---> this tag if rendered then we can confirm SSTI is PRESENT
+
+
+IDENTIFY
+use decision tree to find out
+
+
+EXPLOITATION
